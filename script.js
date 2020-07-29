@@ -1,8 +1,13 @@
-var character =
-document.getElementById("character");
+var startBtn = document.getElementById("startBtn");
+var restartBtn = document.getElementById('restart');
+var character =document.getElementById("character");
 var block = document.getElementById("block");
+var node = document.getElementById("div1");
+
+
 
 function jump(){
+    
     if(character.classList !="animate"){
         character.classList.add("animate");
     }
@@ -11,21 +16,46 @@ function jump(){
     },500);
 }
 
-var checkDead = setInterval(function(){
-    var characterTop = 
-    parseInt(window.getComputedStyle(character).
-    getPropertyValue("top"));
+function start(){
+    startBtn.style.display = 'none' ;
+    restartBtn.style.display ='none';
 
-    var blockLeft = 
-    parseInt(window.getComputedStyle(block).
-    getPropertyValue("left"));
+    var checkDead = setInterval(function(){
+        var characterTop = 
+        parseInt(window.getComputedStyle(character).
+        getPropertyValue("top"));
 
-    if(blockLeft<50 && blockLeft>0 &&
-        characterTop >=110) {
-            block.style.animation = "none";
-            block.style.display = "none";
-            alert("u lose.");
-        }
+        var blockLeft = 
+        parseInt(window.getComputedStyle(block).
+        getPropertyValue("left"));
+
+        if(blockLeft<50 && blockLeft>0 &&
+            characterTop >=110) {
+                
+                block.style.display = "none";
+                alert("u lose.");
+                restartBtn.style.display ='block';
+               
+
+            }
+        
+
+    }, 10); 
+}
+
+function restart(){
+   
+   
+    block.style.display = "block";
+    start();
+
+
+}
+
+startBtn.addEventListener('click',init)
+restartBtn.addEventListener('click',restart)
+
+function init(){
     
-
-}, 10); 
+    start();
+}
