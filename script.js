@@ -31,7 +31,7 @@ function start(){
 
         if(blockLeft<50 && blockLeft>0 &&
             characterTop >=110) {
-                
+
                 block.style.display = "none";
                 alert("u lose.");
                 restartBtn.style.display ='block';
@@ -45,7 +45,7 @@ function start(){
 
 function restart(){
    
-   
+
     block.style.display = "block";
     start();
 
