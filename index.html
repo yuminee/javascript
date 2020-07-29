@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang ="en" onclick ="jump()">
+<html lang ="en">
     <head>
         <meta charset="UTF-8">
         <title>Game</title>
@@ -7,13 +7,14 @@
 
     </head>
     <body>
-        <div id="game">
+        <div id="game" onclick ="jump()">
             <div id = "character"></div>
             <div id= "block"></div>
             <div id = "cloud"></div>
         </div>
     </body>
+    <button id = "restart" >RESTART</button>
+    <button id = "startBtn" >START</button>
+   
     <script src="script.js"></script>
 </html>
-
-<!-- 커밋을 하기 위한 주석 -->
